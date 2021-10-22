@@ -1,0 +1,87 @@
+﻿@model DnDWebsite.Models.Item
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create an Item</h1>
+<div>
+    <a asp-action="Index" class="btn btn-danger mb-3">Back to List</a>
+</div>
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-8">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control input-color" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control input-color" rows="4" cols="50" id="dc"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" id="infd" class="btn btn-danger btn-circle border border border-white mt-4">?</button>
+                    <p id="infpd" class="mt-2">If the item changes how the user looks that could also be in the description section.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Power" class="control-label"></label>
+                        <textarea asp-for="Power" class="form-control input-color" rows="4" cols="50" id="powc"></textarea>
+                        <span asp-validation-for="Power" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" id="infp" class="btn btn-danger btn-circle border border border-white mt-4">?</button>
+                    <p id="infpp" class="mt-2">In this section if the item is a weapon than you can adjust the pre written text or, if it's not a weapon, you can delete it. You should also write about when charges are regened if applicable.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Charges" class="control-label"></label>
+                        <input asp-for="Charges" class="form-control input-color int-input" style="width:150px;" />
+                        <span asp-validation-for="Charges" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-danger" />
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <section class="border border-white rounded p-3">
+                <h3><u>Making an Item</u></h3>
+                <p>
+                    Fill out these sections to make an item that will appear on your items table. The description section is for the items visuals, the power section is for the items actual functional properties,
+                    and the charges are for amount of times you use an ability from the powers section. Click on the question marks next to sections for potentially relevant information.
+                </p>
+            </section>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

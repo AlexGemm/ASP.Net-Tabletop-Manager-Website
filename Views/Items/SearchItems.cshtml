@@ -1,0 +1,25 @@
+﻿<h4>Search Items</h4>
+<div>
+    <a asp-action="Index" class="btn btn-danger mb-3">Back to List</a>
+</div>
+<div class="row">
+    <div class="col-4">
+        <form asp-action="ShowSearchResults">
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label">Write the name of the item you are looking for.</label>
+                <input name="SearchPhrase" class="form-control input-color" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enter" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+    <div class="col-4">
+        <section class="border border-white rounded p-3 float-right">
+            <h3><u>Searching for Items</u></h3>
+            <p>
+                Type in the name of the item (or a specific word within it) into the search bar to get sent back to the filtered item list.
+            </p>
+        </section>
+    </div>
+</div>

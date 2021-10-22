@@ -1,0 +1,83 @@
+﻿@model DnDWebsite.Models.Item
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit an Item</h1>
+<div>
+    <a asp-action="Index" class="btn btn-danger mb-3">Back to List</a>
+</div>
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="row">
+        <div class="col-8">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control input-color" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control input-color" rows="4" cols="50"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Power" class="control-label"></label>
+                        <textarea asp-for="Power" class="form-control input-color" rows="4" cols="50"></textarea>
+                        <span asp-validation-for="Power" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Charges" class="control-label"></label>
+                        <input asp-for="Charges" class="form-control input-color int-input" style="width:150px;" />
+                        <span asp-validation-for="Charges" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="submit" value="Save Edits" class="btn btn-danger" />
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <section class="border border-white rounded p-3">
+                <h3><u>Editing an Item</u></h3>
+                <p>
+                    Edit out each section individually with the old info of the item you want to edit already there.
+                </p>
+            </section>
+        </div>
+    </div> 
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

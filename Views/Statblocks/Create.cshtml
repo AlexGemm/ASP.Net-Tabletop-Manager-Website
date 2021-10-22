@@ -1,0 +1,271 @@
+﻿@model DnDWebsite.Models.Statblock
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Create</h1>
+<div>
+    <a asp-action="Index" class="btn btn-danger mb-3">Back to List</a>
+</div>
+<h4>Statblock</h4>
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control input-color" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label asp-for="AC" class="control-label"></label>
+                                <input asp-for="AC" class="form-control int-input input-color" />
+                                <span asp-validation-for="AC" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input input-color mt-3" asp-for="Shield" /> @Html.DisplayNameFor(model => model.Shield)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Health" class="control-label"></label>
+                        <input asp-for="Health" class="form-control int-input input-color" />
+                        <span asp-validation-for="Health" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Speed" class="control-label"></label>
+                        <input asp-for="Speed" class="form-control int-input input-color" />
+                        <span asp-validation-for="Speed" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Strength" class="control-label"></label>
+                        <input asp-for="Strength" class="form-control stats-input input-color" />
+                        <span asp-validation-for="Strength" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Dexterity" class="control-label"></label>
+                        <input asp-for="Dexterity" class="form-control stats-input input-color" />
+                        <span asp-validation-for="Dexterity" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Constitution" class="control-label"></label>
+                        <input asp-for="Constitution" class="form-control stats-input input-color" />
+                        <span asp-validation-for="Constitution" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Intelligence" class="control-label"></label>
+                        <input asp-for="Intelligence" class="form-control stats-input input-color" />
+                        <span asp-validation-for="Intelligence" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Wisdom" class="control-label"></label>
+                        <input asp-for="Wisdom" class="form-control stats-input input-color" />
+                        <span asp-validation-for="Wisdom" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Charisma" class="control-label"></label>
+                        <input asp-for="Charisma" class="form-control stats-input input-color" />
+                        <span asp-validation-for="Charisma" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SavingThrows" class="control-label"></label>
+                        <input asp-for="SavingThrows" class="form-control input-color" />
+                        <span asp-validation-for="SavingThrows" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Resistances" class="control-label"></label>
+                        <input asp-for="Resistances" class="form-control input-color" />
+                        <span asp-validation-for="Resistances" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Vulnerabilities" class="control-label"></label>
+                        <input asp-for="Vulnerabilities" class="form-control input-color" />
+                        <span asp-validation-for="Vulnerabilities" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Immunities" class="control-label"></label>
+                        <input asp-for="Immunities" class="form-control input-color" />
+                        <span asp-validation-for="Immunities" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="ConditionImmunities" class="control-label"></label>
+                        <input asp-for="ConditionImmunities" class="form-control input-color" />
+                        <span asp-validation-for="ConditionImmunities" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Senses" class="control-label"></label>
+                        <input asp-for="Senses" class="form-control input-color" />
+                        <span asp-validation-for="Senses" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Skills" class="control-label"></label>
+                        <input asp-for="Skills" class="form-control input-color" />
+                        <span asp-validation-for="Skills" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Languages" class="control-label"></label>
+                        <input asp-for="Languages" class="form-control input-color" />
+                        <span asp-validation-for="Languages" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="BasicAttacks" class="control-label"></label>
+                        <textarea asp-for="BasicAttacks" class="form-control input-color" rows="4" cols="50" id="bac"></textarea>
+                        <span asp-validation-for="BasicAttacks" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div id ="nsarow" class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="NonSpellAbilities" class="control-label"></label>
+                        <textarea asp-for="NonSpellAbilities" class="form-control input-color" rows="4" cols="50" id="nsac"></textarea>
+                        <span asp-validation-for="NonSpellAbilities" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" id="hidensa" class="btn btn-danger border border border-white mt-4">None</button>
+                </div>
+            </div>
+            <div id="prow" class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Passives" class="control-label"></label>
+                        <textarea asp-for="Passives" class="form-control input-color" rows="4" cols="50" id="pc"></textarea>
+                        <span asp-validation-for="Passives" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" id="hidep" class="btn btn-danger border border border-white mt-4">None</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="LegendaryActions" class="control-label"></label>
+                        <textarea asp-for="LegendaryActions" class="form-control input-color" rows="4" cols="50" id="lac"></textarea>
+                        <span asp-validation-for="LegendaryActions" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SpellCasting" class="control-label"></label>
+                        <textarea asp-for="SpellCasting" class="form-control input-color" rows="4" cols="50" id="scc"></textarea>
+                        <span asp-validation-for="SpellCasting" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="ExtraNotes" class="control-label"></label>
+                        <textarea asp-for="ExtraNotes" class="form-control input-color" rows="4" cols="50" id="enc"></textarea>
+                        <span asp-validation-for="ExtraNotes" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-danger" />
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

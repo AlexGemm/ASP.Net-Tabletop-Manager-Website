@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DnDWebsite.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Items</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-danger mr-2">Create Item</a>
+    <a asp-action="SearchItems" class="btn btn-danger">Search Items</a>
+</p>
+
+<div class="w-50 float-left">
+    @foreach (var item in Model)
+    {
+        <div class="container border border-white rounded p-3 mb-3">
+            <div class="row">
+                <div class="col">
+                    <h5 class="mb-3">@Html.DisplayFor(modelItem => item.Name)</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <b>Description:</b> @Html.DisplayFor(modelItem => item.Description)
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <b>Charges:</b> @Html.DisplayFor(modelItem => item.Charges)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <b>Power:</b><br />
+                    @Html.DisplayFor(modelItem => item.Power)
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-danger">Edit Item</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete Item</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,122 @@
+﻿@model DnDWebsite.Models.Statblock
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete a Statblock</h1>
+<a asp-action="Index" class="btn btn-danger mb-3">Back to List</a>
+
+<h4>Are you sure you want to delete this?</h4>
+<div class="w-75 float-left">
+    <div class="container border border-white rounded p-3 mb-3">
+        <div class="row">
+            <div class="col">
+                <h5 class="mb-3">@Html.DisplayFor(model => model.Name)</h5>
+            </div>
+        </div>
+        <div class="row border-bottom border-white">
+            <div class="col">
+                <b>AC:</b> @Html.DisplayFor(model => model.AC)
+            </div>
+            <div class="col">
+                (Shield @Html.DisplayFor(model => model.Shield))
+            </div>
+            <div class="col">
+                <b>HP:</b> @Html.DisplayFor(model => model.Health)
+            </div>
+            <div class="col">
+                <b>Speed:</b> @Html.DisplayFor(model => model.Speed) ft
+            </div>
+        </div>
+        <hr />
+        <div class="row border-bottom border-white">
+            <div class="col">
+                <b>STR:</b> @Html.DisplayFor(model => model.Strength)
+            </div>
+            <div class="col">
+                <b>DEX:</b> @Html.DisplayFor(model => model.Dexterity)
+            </div>
+            <div class="col">
+                <b>CON:</b> @Html.DisplayFor(model => model.Constitution)
+            </div>
+            <div class="col">
+                <b>INT:</b> @Html.DisplayFor(model => model.Intelligence)
+            </div>
+            <div class="col">
+                <b>WIS:</b> @Html.DisplayFor(model => model.Wisdom)
+            </div>
+            <div class="col">
+                <b>CHA:</b> @Html.DisplayFor(model => model.Charisma)
+            </div>
+        </div>
+        <hr />
+        <div class="row mb-2">
+            <div class="col">
+                <b>Resistances:</b> @Html.DisplayFor(model => model.Resistances)
+            </div>
+            <div class="col">
+                <b>Vulnerabilities:</b> @Html.DisplayFor(model => model.Vulnerabilities)
+            </div>
+            <div class="col">
+                <b>Immunities:</b> @Html.DisplayFor(model => model.Immunities)
+            </div>
+        </div>
+        <div class="row border-bottom border-white">
+            <div class="col">
+                <b>Saving Throws:</b> @Html.DisplayFor(model => model.SavingThrows)
+            </div>
+            <div class="col">
+                <b>Condition Immunities:</b> @Html.DisplayFor(model => model.ConditionImmunities)
+            </div>
+        </div>
+        <hr />
+        <div class="row border-bottom border-white">
+            <div class="col">
+                <b>Senses:</b> @Html.DisplayFor(model => model.Senses)
+            </div>
+            <div class="col">
+                <b>Skills:</b> @Html.DisplayFor(model => model.Skills)
+            </div>
+            <div class="col">
+                <b>Languages:</b> @Html.DisplayFor(model => model.Languages)
+            </div>
+        </div>
+        <div class="row border-bottom border-white pb-3 pt-3">
+            <div class="col" id="bai">
+                <b>Basic Attacks:</b><br /> @Html.DisplayFor(model => model.BasicAttacks)
+            </div>
+        </div>
+        <div class="row border-bottom border-white pb-3 pt-3">
+            <div class="col" id="nsai">
+                <b>Non-Spell Abilities:</b><br /> @Html.DisplayFor(model => model.NonSpellAbilities)
+            </div>
+        </div>
+        <div class="row border-bottom border-white pb-3 pt-3">
+            <div class="col" id="pi">
+                <br />
+                <b>Passives:</b> @Html.DisplayFor(model => model.Passives)
+            </div>
+        </div>
+        <div class="row border-bottom border-white pb-3 pt-3">
+            <div class="col" id="lai">
+                <b>Legendary Actions:</b><br /> @Html.DisplayFor(model => model.LegendaryActions)
+            </div>
+        </div>
+        <div class="row border-bottom border-white pb-3 pt-3">
+            <div class="col" id="sci">
+                <b>Spells:</b><br /> @Html.DisplayFor(model => model.SpellCasting)
+            </div>
+        </div>
+        <hr />
+        <div class="row border-bottom border-white pb-3 pt-3">
+            <div class="col" id="eni">
+                <b>Spells:</b><br /> @Html.DisplayFor(model => model.ExtraNotes)
+            </div>
+        </div>
+    </div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>
